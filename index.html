@@ -1,0 +1,1194 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff3f6">
+  <title> Self-care guide nè♡</title>
+
+  <style>
+    /* =========================
+       1. :)) đủ thứ màu mè r
+    ========================== */
+    :root {
+      --pink: #e99bad;
+      --pink-dark: #b95f7b;
+      --pink-light: #fff0f4;
+      --cream: #fffaf7;
+      --green: #9bb7a1;
+      --text: #66515b;
+      --muted: #987f89;
+      --white: #ffffff;
+      --border: #f3dce4;
+      --shadow: 0 8px 28px rgba(190, 117, 143, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    button, input, textarea, select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 32px, 980px);
+      margin: auto;
+    }
+
+    .serif {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: normal;
+    }
+
+    .eyebrow {
+      color: var(--pink-dark);
+      font-size: 0.76rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .section {
+      padding: 65px 0;
+      scroll-margin-top: 65px;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto 32px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      line-height: 1.25;
+      margin: 10px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin: 8px auto;
+    }
+
+    .flower {
+      color: var(--pink);
+    }
+
+    /* =========================
+       2. 
+    ========================== */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 250, 247, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font-family: Georgia, serif;
+      font-size: 1.1rem;
+      color: var(--pink-dark);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--pink-dark);
+    }
+
+    /* =========================
+       3.
+    ========================== */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 72px 0 68px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 15% 20%, #ffe0e9 0, transparent 32%),
+        radial-gradient(ellipse at 85% 70%, #f5ddec 0, transparent 30%),
+        linear-gradient(140deg, #fff4f6, #fffaf7 60%, #f8edf5);
+    }
+
+    .hero-inner {
+      position: relative;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .hero-flower {
+      font-size: 2.2rem;
+      display: inline-block;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .hero h1 {
+      margin: 16px 0;
+      font-size: clamp(2.7rem, 8vw, 4.8rem);
+      line-height: 1.08;
+      color: #a95775;
+    }
+
+    .hero h1 span {
+      color: var(--pink);
+      font-style: italic;
+    }
+
+    .hero-description {
+      max-width: 480px;
+      margin: 20px auto;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 23px;
+      border: 0;
+      border-radius: 30px;
+      background: var(--pink);
+      color: white;
+      box-shadow: 0 5px 15px rgba(185, 95, 123, 0.17);
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .button:hover {
+      background: var(--pink-dark);
+      transform: translateY(-2px);
+    }
+
+    .button-secondary {
+      background: white;
+      color: var(--pink-dark);
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+
+    .hero-note {
+      margin-top: 22px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+
+    /* =========================
+       4. CARDS
+    ========================== */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 23px;
+      box-shadow: var(--shadow);
+    }
+
+    .card-icon {
+      width: 47px;
+      height: 47px;
+      display: grid;
+      place-items: center;
+      background: var(--pink-light);
+      border-radius: 15px;
+      font-size: 1.45rem;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin: 7px 0;
+      font-size: 1.15rem;
+    }
+
+    .card p {
+      margin: 8px 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .tip {
+      margin-top: 15px;
+      padding: 13px 15px;
+      background: #fff5f7;
+      border-left: 3px solid var(--pink);
+      border-radius: 0 12px 12px 0;
+      font-size: 0.9rem;
+    }
+
+    .green-tip {
+      background: #f1f7f1;
+      border-left-color: var(--green);
+    }
+
+    /* =========================
+       5. CHECKLIST
+    ========================== */
+    .routine-panel {
+      background: linear-gradient(145deg, #fff0f4, #fff9f6);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: clamp(20px, 5vw, 35px);
+    }
+
+    .routine-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .routine-top h3 {
+      margin: 0;
+    }
+
+    .progress-track {
+      height: 8px;
+      background: #f4dce5;
+      border-radius: 99px;
+      overflow: hidden;
+      margin: 17px 0 7px;
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, #e99bad, #c9a4c9);
+      border-radius: 99px;
+      transition: width 0.3s;
+    }
+
+    .progress-label {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 11px;
+      margin-top: 24px;
+    }
+
+    .check-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: white;
+      padding: 13px 15px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .check-item:has(input:checked) {
+      background: #fff8fa;
+    }
+
+    .check-item input {
+      accent-color: var(--pink-dark);
+      width: 18px;
+      height: 18px;
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+
+    .check-item span {
+      flex: 1;
+    }
+
+    .check-item strong {
+      display: block;
+      font-weight: 600;
+    }
+
+    .check-item small {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    /* =========================
+       6. 
+    ========================== */
+    .accordion {
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 17px 19px;
+      font-weight: bold;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      color: var(--pink-dark);
+      font-size: 1.3rem;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    .details-content {
+      padding: 0 19px 19px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .details-content li {
+      margin: 7px 0;
+    }
+
+    /* =========================
+       7. MINI RESET
+    ========================== */
+    .reset-box {
+      text-align: center;
+      background: linear-gradient(145deg, #fce8ef, #f4eafa);
+      padding: 35px 22px;
+      border-radius: 26px;
+    }
+
+    .reset-box h3 {
+      font-family: Georgia, serif;
+      font-size: 1.8rem;
+      margin: 8px 0;
+      font-weight: normal;
+    }
+
+    .reset-message {
+      max-width: 500px;
+      min-height: 54px;
+      margin: 15px auto;
+      color: #876779;
+    }
+
+    /* =========================
+       8. 
+    ========================== */
+    .diary-form {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field label {
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 12px 13px;
+      color: var(--text);
+      background: #fffafa;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      outline: none;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--pink);
+      box-shadow: 0 0 0 3px #fce8ef;
+    }
+
+    .field textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    .diary-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .diary-status {
+      color: var(--pink-dark);
+      font-size: 0.9rem;
+      margin-top: 12px;
+    }
+
+    .privacy-note {
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 13px;
+    }
+
+    /* =========================
+       9. LOVE NOTE & FOOTER
+    ========================== */
+    .letter {
+      max-width: 650px;
+      margin: auto;
+      background: white;
+      padding: clamp(23px, 6vw, 42px);
+      border: 1px dashed #e7b5c4;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .letter h2 {
+      font-family: Georgia, serif;
+      font-weight: normal;
+      color: var(--pink-dark);
+      font-size: 2rem;
+    }
+
+    .letter p {
+      color: var(--muted);
+    }
+
+    .signature {
+      color: var(--pink-dark);
+      font-family: Georgia, serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      margin-top: 22px;
+    }
+
+    footer {
+      padding: 28px 15px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      background: #fff4f6;
+    }
+
+    /* =========================
+       10. RESPONSIVE DESIGN
+    ========================== */
+    @media (max-width: 640px) {
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 12px 0;
+        gap: 8px;
+      }
+
+      .nav-links {
+        width: 100%;
+        gap: 16px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        white-space: nowrap;
+      }
+
+      .hero {
+        padding: 55px 0;
+      }
+
+      .cards,
+      .diary-form {
+        grid-template-columns: 1fr;
+      }
+
+      .full-width {
+        grid-column: auto;
+      }
+
+      .section {
+        padding: 48px 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="brand">♡ Self-care guide đây</a>
+
+      <div class="nav-links">
+        <a href="#routine">Routine</a>
+        <a href="#mind">Chill nè</a>
+        <a href="#sleep-tips">Sleep tips</a>
+        <a href="#diary">Nhật kí</a>
+        <a href="#letter">Một cái note nhỏ</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="home">
+    <div class="container hero-inner">
+      <div class="hero-flower" aria-hidden="true">🌷</div>
+
+      <p class="eyebrow">Cái này tui làm cho cậu đó</p>
+
+      <h1 class="serif">
+        Sleep wellness<br>
+        <span>guide♡♡</span>
+      </h1>
+
+      <p class="hero-description">
+        Một lời nhắc nhẹ nhàng: hãy sống chậm lại, hít thở,
+        và dành cho bản thân sự nghỉ ngơi xứng đáng.
+        Mỗi lần một bước nhỏ thôi nhé. ♡
+      </p>
+
+      <a class="button" href="#routine">
+        Chạm vào nha🌸
+      </a>
+
+      <p class="hero-note">
+        No pressure to be perfect. Just take care of yourself.
+      </p>
+    </div>
+  </header>
+
+  <!-- BEDTIME ROUTINE -->
+  <section class="section" id="routine">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">01 · Danh sách việc mà tớ nghĩ cậu có thể làm trước khi ngủ</span>
+        <h2 class="serif">Thói quen trước khi đi ngủ🌙</h2>
+        <p>
+          Một vài thói quen nhẹ nhàng giúp cậu chuẩn bị cho việc nghỉ ngơi.
+          Hãy chọn những gì phù hợp với bản thân cậu nhé!
+        </p>
+      </div>
+
+      <div class="routine-panel">
+        <div class="routine-top">
+          <h3>Danh sách những việc cần làm tối nay</h3>
+          <button class="button button-secondary"
+                  type="button" id="resetChecklist">
+            Reset ↻
+          </button>
+        </div>
+
+        <div class="progress-track"
+             role="progressbar"
+             aria-label="Bedtime checklist progress"
+             aria-valuemin="0"
+             aria-valuemax="100"
+             aria-valuenow="0"
+             id="progressTrack">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div class="progress-label" id="progressLabel"
+             aria-live="polite">
+          0/5♡
+        </div>
+
+        <div class="checklist">
+          <label class="check-item">
+            <input type="checkbox" class="routine-check">
+            <span>
+              <strong>🌷 Đã chuẩn bị cho ngày mai chưaaaa</strong>
+              <small>Cất sách vở và soạn đồ trước.</small>
+            </span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" class="routine-check">
+            <span>
+              <strong>🫧Đi ngủ nè</strong>
+              <small>Tắt đèn và trùm chăn ngủ nè,nhớ là tạo không gian thoải mái để ngủ nhé!</small>
+            </span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" class="routine-check">
+            <span>
+              <strong>📱Cất điện thoại điiiii😡😡</strong>
+              <small>Cậu phải cất điện thoại ít nhất là 30 phút trước khi ngủ!!!!</small>
+            </span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" class="routine-check">
+            <span>
+              <strong>☁️ Dành thời gian nghỉ một chút i</strong>
+              <small>Chẳng hạn như đọc sách,nghe nhạc,hay viết nhật kí nếu cậu có tâm sự</small>
+            </span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" class="routine-check">
+            <span>
+              <strong>💗Cậu nhớ lắng nghe bản thân nhé</strong>
+              <small>Bất cứ khi nào cậu thấy bản thân buồn ngủ thì cứ ngủ,không cần phải vội vàng nha 🥹</small>
+            </span>
+          </label>
+        </div>
+
+        <div class="tip">
+          Cậu nhớ nhe:đây là danh sách tớ làm để cậu theo dõi bản thân thôi,không cần phải thực hiện hết đâu.Cậu đừng bận tâm quá nhé!!
+    Yêu cậu lắm nè💕
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  -->
+  <section class="section" id="mind">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">02 ·Đây là những cách tớ tìm được nếu buổi tối cậu hay suy tư🥹</span>
+        <h2 class="serif">Cậu tham khảo thử nhé☁️</h2>
+        <p>
+          Tối nay không cần phải giải quyết hết mọi chuyện đâu cậu nhé. 
+          Chỉ cần thử làm một việc nhỏ nào đó giúp cậu thấy lòng nhẹ nhàng hơn là được rồi.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon">📝</div>
+          <h3>Phương pháp Brain dump</h3>
+          <p>
+            Gửi gắm hết những suy nghĩ ngổn ngang lên giấy trong 5 phút nha cậu. Việc còn lại cứ để ngày mai lo nè!🧸
+          </p>
+          <div class="tip">
+            "Cậu thử tự hỏi nhẹ một câu xem sao nha: 'Ngày mai mình nên làm gì từ những bước nhỏ nhất để giải quyết tụi này đây ta?'" 🐳
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🌬️</div>
+          <h3>Thở chậm</h3>
+          <p>
+            Cậu ơi, hít vào thật nhẹ nhàng trong khoảng 4 giây, rồi từ từ thở ra trong khoảng 6 giây nha. Cứ tiếp tục như vậy từ 1 đến 3 phút thui nè. 🍃
+          </p>
+          <div class="tip">
+            Cậu cứ giữ nhịp thở thật thoải mái theo cách của mình nha. Nếu việc đếm số làm cậu thấy hơi mệt hay áp lực thì mình cứ dừng lại, không cần đếm nữa đâu nè.✨
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🪻</div>
+          <h3>Còn giờ là thư giãn thoii:3</h3>
+          <p>
+            Đừng gồng người nữa nha, thả lỏng quai hàm này, hạ vai xuống, thư giãn đôi tay và để đôi chân được nghỉ ngơi thoải mái nhất nhé. ☁️
+          </p>
+          <div class="tip">
+            Đừng ép mình phải thư giãn ngay lập tức nhéee. Chỉ cần chú ý xem nơi nào trong tâm trí hay cơ thể có thể buông lỏng đi một chút là được rồi hà 👻🎈
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🌧️</div>
+          <h3>Cậu ơi, đi tìm một âm thanh thật là dịu dàng để nghe nhaaa 🎧🌸</h3>
+          <p>
+            Hãy chọn tiếng mưa bình yên, tiếng sóng biển hay một bản nhạc không lời thật mềm mại, nếu những âm thanh đó mang lại cảm giác ấm áp cho cậu nhé 🍃🧸
+          </p>
+          <div class="tip">
+            Nhớ vặn nhỏ volume thoiii nhéee
+          </div>
+        </article>
+      </div>
+
+      <div class="reset-box" style="margin-top: 24px;">
+        <div style="font-size: 2rem;" aria-hidden="true">🌸</div>
+        <p class="eyebrow">Lời nhắn nhủ tới cậu nếu cậu vẫn chưa ngủ được và thấy chán❤️</p>
+        <h3>❤️❤️❤️💕
+</h3>
+
+        <p class="reset-message" id="resetMessage" aria-live="polite">
+          Không cần phải bắt bộ não nhỏ bé giải quyết hết tất cả mọi thứ trong tối nay đâu cậu ơi. Cho phép bản thân mình lười biếng nghỉ ngơi đi nè, dẫu cho mọi việc vẫn còn ngổn ngang ngoài kia nhaaa ☁️🎀
+        </p>
+
+        <button class="button" type="button" id="newMessage">
+          Cậu chạm vào đi,chạm nhiều lần sẽ thay đổi á
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!--  -->
+  <section class="section" id="sleep-tips">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">03 ·Thời điểm cậu thật sự chưa ngủ đc nữa😣😣 vẫn còn thức nữa </span>
+        <h2 class="serif">Thì đây lại là gợi ý của tớ cho cậu🌙</h2>
+        <p>
+          Open the little guide that best matches what you're experiencing.
+        </p>
+      </div>
+
+      <div class="accordion">
+        <details>
+          <summary>☁️ "Cậu ơi,tớ mệt mà không ngủ được hic hic"</summary>
+          <div class="details-content">
+            <ul>
+              <li>Cậu nhớ cố gắng duy trì giờ thức dậy mỗi ngày thật đều đặn nhaaa ☀️ đùng ngủ nướng thất thường nèee 🐰💖</li>
+              <li>Hãy dành vài phút để đón ánh nắng tự nhiên vào mỗi buổi sáng nhé cậu ơi 🍃 cực tốt cho sức khỏe luôn nà 🧸</li>
+              <li>Hãy đi ngủ khi cơ thể cậu lên tiếng đòi ngủ nhé, đừng ép mình phải ngủ sớm khi chưa sẵn sàng nà 🍃🧸</li>
+              <li>Nếu thấy trằn trọc, hãy tạm rời giường và làm việc gì đó nhẹ nhàng dưới ánh sáng dịu nhé. Cậu cứ quay lại ngủ khi đã thấy buồn ngủ rồi nà 🍃🧸</li>
+            </ul>
+            <p>
+              Try not to keep checking the clock or blaming yourself
+              for being awake.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>🧠 "Tớ không thể dừng suy nghĩ được"</summary>
+          <div class="details-content">
+            <ul>
+              <li>Hãy viết ra những điều cậu đang bận tâm trước giờ đi ngủ nhé, gửi gắm tụi nó lại để ngủ thật ngon nà </li>
+              <li>Dành ra một chút thời gian ngắn trong ngày để suy nghĩ cho kỹ các rắc rối và tìm bước đi tiếp theo nha cậu ơi, đừng để tụi nó ám ảnh cả ngày nèee 🧠👣💖</li>
+              <li>Hãy thử hít thở dịu dàng hoặc dành thời gian cho một hoạt động yên tĩnh, quen thuộc nhé 🧸 cho tâm trí bình yên lại nà 🌸</li>
+              <li>Cậu nhớ tự nhủ với bản thân là không phải chuyện rắc rối nào cũng cần có câu trả lời ngay trong tối nay đâu nhaaa 🥺 cứ ngủ ngon cái đã nèee 🛌💖</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>📱 "Tớ cứ lướt quoài lunnn"</summary>
+          <div class="details-content">
+            <ul>
+              <li>Hãy chọn cho mình một thời điểm cụ thể để ngừng dùng mạng xã hội mỗi tối nhé 🍃 bảo vệ giấc ngủ của cậu nà 🧸</li>
+              <li>Cậu nhớ bật chế độ 'Không làm phiền' hoặc tắt tiếng mấy cái thông báo không quan trọng đi nhaaa 🔇 để không ai quấy rầy giấc ngủ nèee 🐰💖</li>
+              <li>Cậu ơi, nhớ để điện thoại ở chỗ nào xa tầm tay một chút nhaaa, cách ly nó ra để không bị ngứa tay với tới lướt lướt nèee 🛌🚀💖</li>
+              <li>Thay vì lướt lướt điện thoại, cậu thử đọc sách, viết nhật ký hoặc bật một bản nhạc êm dịu lên nghe xem sao nhaaa 📖✍️🎧 nhẹ lòng liền hà 🐰💖</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>☕ "Tớ lỡ uống trà sữa rùi,tỉnh rùiiiii"</summary>
+          <div class="details-content">
+            <p>
+             • Cậu ơi, caffeine có thể làm mình mất ngủ suốt mấy tiếng lận đó nha. Mấy món như cà phê, trà đen, trà xanh, trà sữa nấu từ trà, với cả nước tăng lực đều có chứa caffeine hết á, cậu nhớ né ra nhaaa ☕🥤❌"
+            </p>
+            <ul>
+              <li>Hãy thử hạn chế caffeine từ đầu giờ chiều nhé, hoặc sớm hơn nếu cơ thể cậu dễ bị mất ngủ vì nó nà 🍃🧸</li>
+              <li>Hãy thử hạn chế caffeine từ đầu giờ chiều nhé, hoặc sớm hơn nếu cơ thể cậu dễ bị mất ngủ vì nó nà 🍃🧸</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>🌷 Cuộc sống mà, có những đêm giấc ngủ đến thật êm, nhưng cũng có những đêm trằn trọc khó khăn một chút xíu nè. Chuyện đó hoàn toàn bình thường nên cậu đừng tự trách mình nhaaa 🌙 đằng nào thì tớ vẫn ở đây với cậu nèee 🐰💖</summary>
+          <div class="details-content">
+            <p>
+             Giấc ngủ mỗi đêm mỗi khác là chuyện bình thường nha cậu. Cậu cứ thử giữ giờ thức dậy đều đặn, đón chút nắng sáng, chịu khó vận động trong ngày và dành đủ thời gian để ngủ ngon giấc nhaaa ⏰☀️🏃‍♀️💖
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <div class="tip green-tip" style="margin-top: 18px;">
+        <strong>Note nhỏ cho cậu:</strong>
+        Cậu ơi, nhớ né việc tự ý dùng thuốc ngủ hay thực phẩm chức năng hỗ trợ giấc ngủ nhaa!!
+      </div>
+    </div>
+  </section>
+
+  <!-- SLEEP DIARY -->
+  <section class="section" id="diary">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">04 · Khảo sát giấc ngủ cho cậu</span>
+        <h2 class="serif">Nhật kí khảo sát📔</h2>
+        <p>
+          Đây chỉ là một chút nhìn nhận lại bản thân thui, chứ không phải là một bảng điểm để chấm công hay phán xét đâu nà. Cậu cứ thong thả quan sát các thói quen của mình mà đừng tự trách móc bản thân nhaaa 🥺 Chụp nhẹ một cái ôm nèee 💖✨
+        </p>
+      </div>
+
+      <div class="card">
+        <form id="diaryForm">
+          <div class="diary-form">
+            <div class="field">
+              <label for="sleepDate">Hôm nay là ngày mấy tháng mấy thế taaa? 📅💖</label>
+              <input type="date" id="sleepDate" required>
+            </div>
+
+            <div class="field">
+              <label for="bedTime">Mấy giờ thì mình đi ngủ vậy nèee? 🕰️🎀</label>
+              <input type="time" id="bedTime">
+            </div>
+
+            <div class="field">
+              <label for="wakeTime">Mình đã thức dậy vào lúc mấy giờ nhỉ? 🍃🧸</label>
+              <input type="time" id="wakeTime">
+            </div>
+
+            <div class="field">
+              <label for="sleepMood">Tâm trạng sáng nay của mình như thế nào vậy nèee? 🦄🎀</label>
+              <select id="sleepMood">
+                <option value="Tỉnh táo">🌞 Sảng khoái vl</option>
+                <option value="Bình thường">🌷 Okay đó</option>
+                <option value="Buồn ngủ">☁️ Mas,buồn ngủ v trời</option>
+                <option value="Mệt mỏi">🌧️ Mệt nha tròiiii</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="caffeine">Mình có sử dụng caffeine vào cuối ngày không nhỉ? 🍃🧸</label>
+              <select id="caffeine">
+                <option value="Không">Noooo</option>
+                <option value="Có">Ui lỡ mất tiêu</option>
+                <option value="Không chắc">Tui chả biết nữa hic</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="phone">Mình có đụng vô điện thoại gần giờ đi ngủ không vậy nèee? 🙅‍♀️🎀</label>
+              <select id="phone">
+                <option value="Ít">Chắc là có một chút á</option>
+                <option value="Nhiều">Nay đụng hơi nhiều ùi </option>
+                <option value="Không">Nay giỏi quá trời không đụng lun</option>
+              </select>
+            </div>
+
+            <div class="field full-width">
+              <label for="thoughts">Lúc đó đầu óc cậu đang ngổn ngang những suy nghĩ gì thế taaa? Viết ra hết cho nhẹ lòng nhaaa 🧠💭💖</label>
+              <textarea id="thoughts"
+                placeholder="Những điều mình muốn ghi nhớ, hoặc tạm để lại cho ngày mai... 🍃🧸"></textarea>
+            </div>
+          </div>
+
+          <div class="diary-actions">
+            <button type="submit" class="button">
+              Lưu note ngày hôm nay ♡
+            </button>
+
+            <button type="button" class="button button-secondary"
+                    id="clearDiary">
+              Tạo note mới
+            </button>
+          </div>
+
+          <p class="diary-status" id="diaryStatus" aria-live="polite"></p>
+
+          <p class="privacy-note">
+            Nhật ký của cậu sẽ được cất giữ an toàn ngay trong chính trình duyệt trên thiết bị này thôi nè và không bị gửi đi đâu hết á 🤫 Nma nếu cậu có dùng chung máy với người khác thì nhớ chú ý bảo mật kẻo người ta vô tình ngó thấy mấy dòng tâm sự nhaaa 🖥️🔒💖
+            Tớ cũng không thể thấy được đâu cậu yên tâm nhé:3
+          </p>
+        </form>
+
+        <div id="savedEntries" style="margin-top: 24px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOVE NOTE -->
+  <section class="section" id="letter">
+    <div class="container">
+      <div class="letter">
+        <div style="font-size: 2rem;" aria-hidden="true">🌷 ♡ 🌷</div>
+
+        <p class="eyebrow">Một cái note nhỏ cuối cùng cho cậu:3</p>
+
+        <h2>Gửi cậu,</h2>
+
+        <p>
+          Cậu không nhất thiết phải làm việc hiệu quả trong mọi khoảnh khắc và cậu cũng không cần phải tìm ra lời giải cho mọi vấn đề trước khi ngày hôm nay kết thúc đâu 🍃 Hãy dịu dàng với bản thân nhé 🧸 🌊 ♡
+        </p>
+
+        <p>
+          Sẽ có những ngày cậu thấy mọi chuyện thật nhẹ nhàng, nhưng cũng có những ngày mọi thứ bỗng hóa nặng nề hơn một chút. Vào những đêm như thế, tớ mong cậu hãy luôn nhớ dịu dàng và bao dung với chính mình nhaaa 🧸 ôm lấy cậu nèee ✨
+        </p>
+
+        <p>
+          Uống một ngụm nước ấm nè, mệt rồi thì nghỉ ngơi thôi cậu ơi, và hãy cho ngày mai một cơ hội để trở thành một ngày mới thật tuyệt vời nhaaa 🥛🛌.
+        </p>
+
+        <div class="signature">
+          Hjhj🌸
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Tự thấy sến luôn á ;-;</p>
+    <p>Thoi chúc cậu nếu có ngủ thì là ngủ ngoan nhée</p>
+    <p>🌷</p>
+  </footer>
+
+  <script>
+    // =========================
+    // 1. BEDTIME CHECKLIST
+    // =========================
+    const checks = document.querySelectorAll(".routine-check");
+    const progressBar = document.getElementById("progressBar");
+    const progressLabel = document.getElementById("progressLabel");
+    const progressTrack = document.getElementById("progressTrack");
+
+    function updateProgress() {
+      const completed = [...checks].filter(item => item.checked).length;
+      const percent = (completed / checks.length) * 100;
+
+      progressBar.style.width = percent + "%";
+      progressLabel.textContent =
+        `${completed} of ${checks.length} little steps completed ♡`;
+
+      progressTrack.setAttribute("aria-valuenow", percent);
+    }
+
+    checks.forEach(item => {
+      item.addEventListener("change", updateProgress);
+    });
+
+    document.getElementById("resetChecklist")
+      .addEventListener("click", () => {
+        checks.forEach(item => item.checked = false);
+        updateProgress();
+      });
+
+    // =========================
+    // 2. 
+    // =========================
+    const reminders = [
+      "Tối nay cậu không cần phải nghĩ cho ra hết mọi chuyện đâu nà. Cậu hoàn toàn được phép nghỉ ngơi mà 🥺 đắp chăn đi ngủ thui thôi nào ☁️",
+      "Một ngày tồi tệ không có nghĩa là cả tuần của cậu cũng sẽ xám xịt đâu nà. Cứ từ từ, chậm rãi bước qua từng chút một thôi nha cậu ơi 🍃 ôm cậu một cái thật chặt nè 🥺💖",
+      "Cậu hoàn toàn được phép dừng lại nghỉ ngơi một chút mà, kể cả khi danh sách việc cần làm vẫn còn chưa hoàn thành xong xuôi nèee 🧸 cho bản thân xả hơi xíu đi nhaaa ✨",
+      "Hãy cứ nhẹ nhàng với bản thân nhé 🧸🌊",
+      "Hãy để ngày mai tự đối mặt với những lo toan của nó nhé 🌊 Còn hiện tại, xin cậu hãy dành tặng cho chính mình một chút bình yên và dịu nhẹ nà 😴💖",
+      "Cậu cũng xứng đáng được chính mình nuông chiều và dịu dàng đối xử màaa 🥺💖"
+    ];
+
+    let lastReminder = -1;
+
+    document.getElementById("newMessage")
+      .addEventListener("click", () => {
+        let next;
+
+        do {
+          next = Math.floor(Math.random() * reminders.length);
+        } while (reminders.length > 1 && next === lastReminder);
+
+        lastReminder = next;
+        document.getElementById("resetMessage").textContent =
+          reminders[next];
+      });
+
+    // =========================
+    // 3. SLEEP DIARY
+    // =========================
+    const diaryForm = document.getElementById("diaryForm");
+    const diaryStatus = document.getElementById("diaryStatus");
+    const savedEntries = document.getElementById("savedEntries");
+    const sleepDate = document.getElementById("sleepDate");
+
+    const storageKey = "littleSleepGardenEntries";
+
+    // Use local date rather than UTC.
+    function localDateString() {
+      const now = new Date();
+      const offset = now.getTimezoneOffset() * 60000;
+      return new Date(now.getTime() - offset)
+        .toISOString().slice(0, 10);
+    }
+
+    sleepDate.value = localDateString();
+
+    function readEntries() {
+      try {
+        const data = localStorage.getItem(storageKey);
+        const parsed = data ? JSON.parse(data) : [];
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (error) {
+        return [];
+      }
+    }
+
+    function renderEntries() {
+      const entries = readEntries();
+      savedEntries.replaceChildren();
+
+      if (entries.length === 0) {
+        const empty = document.createElement("p");
+        empty.className = "privacy-note";
+        empty.textContent = "Cuốn nhật ký nhỏ xinh của cậu sẽ hiện ra ở đây ngay sau khi cậu lưu lại một dòng ghi chú đó nhaaa 📖";
+        savedEntries.appendChild(empty);
+        return;
+      }
+
+      const heading = document.createElement("h3");
+      heading.textContent = "Your recent notes 🌸";
+      savedEntries.appendChild(heading);
+
+      entries.slice(0, 7).forEach(entry => {
+        const article = document.createElement("article");
+        article.className = "tip";
+        article.style.marginBottom = "12px";
+
+        const date = document.createElement("strong");
+        date.textContent = entry.date || "Undated note";
+        article.appendChild(date);
+
+        const summary = document.createElement("p");
+        summary.textContent =
+          `Bedtime: ${entry.bedTime || "Not entered"} · ` +
+          `Wake-up: ${entry.wakeTime || "Not entered"}`;
+        article.appendChild(summary);
+
+        const mood = document.createElement("p");
+        mood.textContent = `Morning: ${entry.mood}`;
+        article.appendChild(mood);
+
+        const caffeine = document.createElement("p");
+        caffeine.textContent = `Late caffeine: ${entry.caffeine}`;
+        article.appendChild(caffeine);
+
+        const phone = document.createElement("p");
+        phone.textContent = `Phone near bedtime: ${entry.phone}`;
+        article.appendChild(phone);
+
+        if (entry.thoughts) {
+          const thoughts = document.createElement("p");
+          thoughts.textContent = `A thought to remember: ${entry.thoughts}`;
+          article.appendChild(thoughts);
+        }
+
+        savedEntries.appendChild(article);
+      });
+
+      const note = document.createElement("p");
+      note.className = "privacy-note";
+      note.textContent = "Showing up to 7 recent notes.";
+      savedEntries.appendChild(note);
+    }
+
+    diaryForm.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const entry = {
+        date: sleepDate.value,
+        bedTime: document.getElementById("bedTime").value,
+        wakeTime: document.getElementById("wakeTime").value,
+        mood: document.getElementById("sleepMood").value,
+        caffeine: document.getElementById("caffeine").value,
+        phone: document.getElementById("phone").value,
+        thoughts: document.getElementById("thoughts").value.trim()
+      };
+
+      const entries = readEntries();
+      const existingIndex = entries.findIndex(item =>
+        item.date === entry.date
+      );
+
+      if (existingIndex >= 0) {
+        entries[existingIndex] = entry;
+      } else {
+        entries.unshift(entry);
+      }
+
+      try {
+        localStorage.setItem(storageKey, JSON.stringify(entries));
+        diaryStatus.textContent =
+          "Dòng ghi chú của cậu đã được cất giữ an toàn trên thiết bị này rồi nè. Cảm ơn cậu vì đã dành thời gian ngồi lại để lắng nghe và trò chuyện với chính mình tối nay nhaaa 📝🔒 ôm cậu một cái thật chặt nàoo 💖✨";
+        renderEntries();
+      } catch (error) {
+        diaryStatus.textContent =
+          "Trình duyệt này bỗng nhiên bị hụt hơi nên chưa lưu được ghi chú cho cậu rồi á 🥺 Nhưng không sao đâu nè, cậu vẫn có thể tự tay viết tụi nó vào một cuốn sổ tay nhỏ xinh mà đúng không dạaa 📖✍️💖";
+      }
+    });
+
+    document.getElementById("clearDiary")
+      .addEventListener("click", () => {
+        diaryForm.reset();
+        sleepDate.value = localDateString();
+        diaryStatus.textContent = "Khung ghi chú đã sẵn sàng cho một bài viết mới 🍃 Cậu có thể bắt đầu viết những điều mình đang suy nghĩ rồi nà 🧸";
+      });
+
+    renderEntries();
+    updateProgress();
+  </script>
+</body>
+</html>
